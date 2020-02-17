@@ -157,3 +157,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# enable kubectl
+if ! shopt -oq posix; then
+  source <(kubectl completion bash)
+fi
