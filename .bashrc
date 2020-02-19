@@ -162,3 +162,6 @@ fi
 if ! shopt -oq posix; then
   source <(kubectl completion bash)
 fi
+
+# load all functions in .function directory
+source $(find .functions/ -type f)
