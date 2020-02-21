@@ -1,6 +1,6 @@
 # Dotfiles (Rafael Dutra)
 
-My all dotfiles used on bash
+My all dotfiles used on bash Linux, please feel free to change it, if you want.
 
 ## How to install
 
@@ -31,42 +31,12 @@ lrwxrwxrwx  1 rafael rafael   33 2020/02/21 13:28:17 .Xresources -> /home/rafael
 
 ## Functions list
 
+* [Docker](docs/functions/docker.md)
+* [GPG](docs/functions/gpg.md)
+* [Git](docs/functions/git.md)
+
+## Generating all functions
+
 ```
-$ cat ${HOME}/.functions/* | grep -E '(^# [a-z A-Z]|[()] {)' | sed "s|[{]||g;/^$/d;s/^# /\n/g;s/^[a-z].*/\**&\**/;s|() \**|()\**|g"
+$ cat ${HOME}/.functions/* | grep -E '(^# [a-z A-Z]|[()] {)' | sed "s|[{]||g;/^$/d;s/^# /\n/g;s/^[a-z].*/\n\```&\```/;s|() \```|()\```|g"
 ```
-
-Automate my docs :D
-
-```docker_make_chapter()```
-
-Apache benchmark. This function must receive a parameter
-
-```docker_ab()```
-
-If you did something wrong, a.k.a commited using wrong email/credential
-
-```git_change_commiter()```
-
-Show on terminal my personal credentials for git
-
-```git_personal_config()```
-
-Show general credential for git
-
-```git_general_config()```
-
-Generate a new key and print it on terminal
-
-```gpg_generate_key()```
-
-List all keys founded
-
-```gpg_list_keys()```
-
-Delete a key using the ID
-
-```gpg_delete_key_by_id ()```
-
-Export a key using the ID. It can be used using the function gpg_list_keys to retrieve IDs keys
-
-```gpg_export_by_id()```
