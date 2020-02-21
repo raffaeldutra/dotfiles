@@ -3,6 +3,15 @@ current_dir := $(shell pwd)
 .PHONY: all
 all: dotfiles
 
+.ONESHELL:
+clone:
+	if [ ! -d ${HOME}/dotfiles ];then
+	    git clone https://github.com/raffaeldutra/dotfiles.git
+	else
+	    echo "dotfiles exists, pulling new files"
+	    cd ${HOME}/dotfiles && git pull origin master
+	fi
+
 .PHONY: dotfiles
 dotfiles: # Do the installation
 	ln -sf $(current_dir)/.functions ${HOME}/.functions
