@@ -24,3 +24,7 @@ gpg_delete_key_by_id () {
     gpg --delete-secret-keys "${1}"
     gpg --delete-key "${1}"
 }
+
+gpg_export_by_id() {
+    gpg -a --export "${1}"
+}
