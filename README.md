@@ -33,6 +33,7 @@ lrwxrwxrwx  1 rafael rafael   33 2020/02/21 13:28:17 .Xresources -> /home/rafael
 
 ```
 $ cat ${HOME}/.functions/* | grep -E '(^# [a-z A-Z]|[()] {)' | sed "s|[{]||g;/^$/d;s/^# /\n/g;s/^[a-z].*/\**&\**/;s|() \**|()\**|g"
+```
 
 Automate my docs :D
 **docker_make_chapter()**
