@@ -14,11 +14,9 @@ EOT
 gpg --armor --export $(gpg --list-secret-keys --keyid-format LONG raffaeldutra@gmail.com | cut -d " " -f3)
 }
 
-
 gpg_list_keys() {
     gpg --list-keys
 }
-
 
 gpg_delete_key_by_id () {
     gpg --delete-secret-keys "${1}"
