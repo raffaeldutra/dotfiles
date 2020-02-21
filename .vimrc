@@ -71,3 +71,5 @@ au BufNewFile,BufRead * syn match brancomala '\s\+$' | hi brancomala ctermbg=red
 syn sync fromstart
 " Barra de espaço mapeado para PageDown no modo de comandos
 noremap <Space> <PageDown>
+
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
