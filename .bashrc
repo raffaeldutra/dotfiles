@@ -164,4 +164,4 @@ if ! shopt -oq posix; then
 fi
 
 # load all functions in .function directory
-source $(find .functions/ -type f)
+source $(find ${HOME}/.functions/ -type f)
