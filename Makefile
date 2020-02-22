@@ -1,3 +1,5 @@
+CFLAGS=-s
+
 current_dir := $(shell pwd)
 
 .PHONY: all
@@ -5,7 +7,12 @@ all: dotfiles
 
 .ONESHELL:
 clone:
-	if [ ! -d ${HOME}/dotfiles ];then
+	if [ "${SHELL}" != "/bin/bash" ]; then
+	    echo "ERROR: This is not a BASH environment"
+	    exit 0
+	fi
+
+	if [ ! -d ${HOME}/dotfiles ]; then
 	    git clone https://github.com/raffaeldutra/dotfiles.git
 	else
 	    echo "dotfiles exists, pulling new files"
