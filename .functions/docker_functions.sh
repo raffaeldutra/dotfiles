@@ -12,5 +12,5 @@ docker_make_chapter() {
 docker_ab() {
   [ -z "${1}" ] && { echo "Please enter an URL"; return; }
 
-  docker container run --rm jordi/ab -k -c 100 -n 10000 http://${1}/
+  docker container run --rm jordi/ab -k -c 100 -n 10000 ${1}
 }
