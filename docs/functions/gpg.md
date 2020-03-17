@@ -1,9 +1,5 @@
 # Functions list for GPG
 
-```
-$ cat ${HOME}/.functions/* | grep -E '(^# [a-z A-Z]|[()] {)' | sed "s|[{]||g;/^$/d;s/^# /\n/g;s/^[a-z].*/\**&\**/;s|() \**|()\**|g"
-```
-
 Generate a new key and print it on terminal
 
 ```gpg_generate_key()```
