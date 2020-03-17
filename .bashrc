@@ -130,11 +130,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
@@ -163,5 +158,8 @@ if ! shopt -oq posix; then
   source <(kubectl completion bash)
 fi
 
-# load all functions in .function directory
-source $(find ${HOME}/.functions/ -type f)
+source ~/vault_functions.sh
+source ~/docker_functions.sh
+source ~/git_functions.sh
+source ~/gpg_functions.sh
+
