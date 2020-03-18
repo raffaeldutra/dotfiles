@@ -59,23 +59,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # [prompt]
-       black="\[\e[1;30m\]"
-         red="\[\e[1;31m\]"
-       green="\[\e[1;32m\]"
-      yellow="\[\e[1;33m\]"
-        blue="\[\e[1;34m\]"
-     magenta="\[\e[1;35m\]"
-        cyan="\[\e[1;36m\]"
-        grey="\[\e[1;37m\]"
-   dark_grey="\[\e[1;90m\]"
-   light_red="\[\e[1;91m\]"
- light_green="\[\e[1;92m\]"
- dark_yellow="\[\e[1;93m\]"
-  light_blue="\[\e[1;94m\]"
-light_purple="\[\e[1;95m\]"
-   turquoise="\[\e[1;96m\]"
-       white="\[\e[1;97m\]"
-         off="\[\e[0m\]"
+. ${HOME}/dotfiles/.terminal_colors
 
 if [ $(id -u) -eq 0 ]; then
   c__def=$red
@@ -162,4 +146,3 @@ source ~/vault_functions.sh
 source ~/docker_functions.sh
 source ~/git_functions.sh
 source ~/gpg_functions.sh
-
