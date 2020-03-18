@@ -34,6 +34,7 @@ lrwxrwxrwx  1 rafael rafael   33 2020/02/21 13:28:17 .Xresources -> /home/rafael
 * [Docker](docs/functions/docker.md)
 * [GPG](docs/functions/gpg.md)
 * [Git](docs/functions/git.md)
+* [Vault](docs/functions/vault.md)
 
 ## Generating all functions
 
