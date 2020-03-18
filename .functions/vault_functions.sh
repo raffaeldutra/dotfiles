@@ -1,11 +1,15 @@
+#!/usr/bin/env bash
+
+. ${HOME}/dotfiles/.terminal_colors
+
 vault_address() {
-    if [ ! -e ~/dotfiles/.env.sh ]; then
-        echo "~/dotfiles/.env.sh not found"
+    if [ ! -e ${HOME}/dotfiles/.env.sh ]; then
+        echo "${HOME}/dotfiles/.env.sh not found"
 
         exit 1
     fi
 
-    source ~/dotfiles/.env.sh ${1}
+    source ${HOME}/dotfiles/.env.sh ${1}
 }
 
 vault_login() {
@@ -17,6 +21,24 @@ vault_login() {
 
     vault_address ${1}
 
+    echo -n "Connecting in: "
+
+    case "${1}" in
+    'dev' | 'tst')
+        echo -e "${green}${VAULT_ADDR}${off}"
+        ;;
+    'uat' | 'hom')
+        echo -e "${yellow}${VAULT_ADDR}${off}"
+        ;;
+    'prd')
+        echo -e "${red}${VAULT_ADDR}${off}"
+        ;;
+    *)
+        echo -e "${cyan}environment ${red}${1}${off} ${cyan}not found${off}"
+
+        return 1
+        ;;
+    esac
+
     vault login -method=ldap username="${LDAP_USERNAME}"
-    echo "Connecting in: ${VAULT_ADDR}"
 }
