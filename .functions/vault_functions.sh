@@ -2,6 +2,8 @@
 
 . ${HOME}/dotfiles/.terminal_colors
 
+# Which address should I connect?
+# It uses .env.sh script to do the right VAULT_ADDR replacement.
 vault_address() {
     if [ ! -e ${HOME}/dotfiles/.env.sh ]; then
         echo "${HOME}/dotfiles/.env.sh not found"
@@ -12,6 +14,13 @@ vault_address() {
     source ${HOME}/dotfiles/.env.sh ${1}
 }
 
+# It accepts an environment to work with.
+# Example: vault_login prod
+# Example: vault_login dev
+# This function will call another function called vault_address and replace the environment for the right VAULT_ADDR env variable.
+# Check the .env.sh.example file.
+#
+# For now it only supports ldap authentication
 vault_login() {
     if [ "x" = "x${1}" ]; then
         echo "First parameter must be an environment <prd/uat/dev>"
