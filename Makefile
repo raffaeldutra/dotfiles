@@ -28,7 +28,7 @@ dotfiles: # Do the installation
 	      ln -sf $$funcs
 	    )
 	done
-
+	
 	ln -sf $(current_dir)/.vimrc ${HOME}/.vimrc
 	ln -sf $(current_dir)/.bashrc ${HOME}/.bashrc
 	ln -sf $(current_dir)/.bash_aliases ${HOME}/.bash_aliases
