@@ -7,7 +7,7 @@ RUN apt update 2>/dev/null && \
   apt install 2>/dev/null \
   build-essential \
   git \
-  source \
+  curl \
   --yes
 
 CMD ["/bin/bash"]

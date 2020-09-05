@@ -7,7 +7,7 @@ My all dotfiles used on bash Linux, please feel free to change it, if you want.
 The command below will download the Makefile and then run it.
 
 ```
-$ curl -OLs https://raw.githubusercontent.com/raffaeldutra/dotfiles/master/Makefile && make -s clone && make dotfiles
+$ curl -OLs https://raw.githubusercontent.com/raffaeldutra/dotfiles/master/Makefile && make
 ```
 
 This will create a `dotfiles` directory where you are downloading it and then it will create all the links needed for all files.

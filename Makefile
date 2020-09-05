@@ -51,7 +51,11 @@ test:
 	source ${HOME}/.bash_aliases
 	source ${HOME}/.bash_profile
 
+	echo "Testing the alias l"
 	l
+
+	echo "Here is all aliases used by this repository"
+	alias
 
 .PHONY: help
 help:
