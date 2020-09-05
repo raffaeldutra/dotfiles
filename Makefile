@@ -1,9 +1,10 @@
 CFLAGS=-s
 
 current_dir := $(shell pwd)
+SHELL := /bin/bash
 
 .PHONY: all
-all: dotfiles
+all: install test
 
 .ONESHELL:
 clone:
@@ -19,8 +20,8 @@ clone:
 	    cd ${HOME}/dotfiles && git pull origin master
 	fi
 
-.PHONY: dotfiles
-dotfiles: # Do the installation
+.PHONY: install
+install: # Do the installation
 	find $(current_dir)/.functions -name "*.sh" | \
 	while read funcs; do
 	    (
@@ -28,7 +29,7 @@ dotfiles: # Do the installation
 	      ln -sf $$funcs
 	    )
 	done
-	
+
 	ln -sf $(current_dir)/.vimrc ${HOME}/.vimrc
 	ln -sf $(current_dir)/.bashrc ${HOME}/.bashrc
 	ln -sf $(current_dir)/.bash_aliases ${HOME}/.bash_aliases
@@ -41,6 +42,16 @@ dotfiles: # Do the installation
 	ln -sf $(current_dir)/.config ${HOME}/.config
 	ln -sf $(current_dir)/.fonts ${HOME}/.fonts
 	ln -sf $(current_dir)/fonts ${HOME}/fonts
+
+.PHONY: test
+test:
+	# expand_aliases on the container is not enabled
+	shopt -s expand_aliases
+	source ${HOME}/.bashrc
+	source ${HOME}/.bash_aliases
+	source ${HOME}/.bash_profile
+
+	l
 
 .PHONY: help
 help:

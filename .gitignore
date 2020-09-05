@@ -166,3 +166,6 @@ linux-*.deb
 # configs for environments
 .env_*
 .env.sh
+
+# etc
+.fonts

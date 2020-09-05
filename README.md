@@ -29,6 +29,19 @@ lrwxrwxrwx  1 rafael rafael   28 2020/02/21 13:28:17 .vimrc -> /home/rafael/dotf
 lrwxrwxrwx  1 rafael rafael   33 2020/02/21 13:28:17 .Xresources -> /home/rafael/dotfiles/.Xresources
 ```
 
+## Testing without installing it (Docker)
+
+You can test it inside a Docker container.
+
+```
+docker container run \
+-it \
+-w /tmp \
+-v $(pwd):/tmp \
+raffaeldutra/dotfiles \
+make
+```
+
 ## Functions list
 
 * [Docker](docs/functions/docker.md)

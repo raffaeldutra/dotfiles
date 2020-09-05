@@ -1,5 +1,12 @@
 # Release Notes
 
+## [v1.3)
+
+### Added
+
+* Documentation improvements for how to use Docker
+* Dockerfile to test dotfiles inside a Docker container
+
 ## [v1.2)
 
 ### Added
