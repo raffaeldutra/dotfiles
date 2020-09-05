@@ -9,7 +9,7 @@ My all dotfiles used on bash Linux, please feel free to change it, if you want.
 The command below will download the Makefile and then run it.
 
 ```
-$ curl -OLs https://raw.githubusercontent.com/raffaeldutra/dotfiles/master/Makefile && make -s clone && make dotfiles
+$ curl -OLs https://raw.githubusercontent.com/raffaeldutra/dotfiles/master/Makefile && make
 ```
 
 This will create a `dotfiles` directory where you are downloading it and then it will create all the links needed for all files.
@@ -36,6 +36,19 @@ lrwxrwxrwx  1 rafael rafael   32 2020/03/18 00:52:48 .tmux.conf -> /home/rafael/
 lrwxrwxrwx  1 rafael rafael   51 2020/03/18 00:52:48 vault_functions.sh -> /home/rafael/dotfiles/.functions/vault_functions.sh
 lrwxrwxrwx  1 rafael rafael   28 2020/03/18 00:52:48 .vimrc -> /home/rafael/dotfiles/.vimrc
 lrwxrwxrwx  1 rafael rafael   33 2020/03/18 00:52:48 .Xresources -> /home/rafael/dotfiles/.Xresources
+```
+
+## Testing without installing it (Docker)
+
+You can test it inside a Docker container.
+
+```
+docker container run \
+-it \
+-w /tmp \
+-v $(pwd):/tmp \
+raffaeldutra/dotfiles \
+make
 ```
 
 ## Functions list
