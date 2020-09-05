@@ -1,5 +1,19 @@
 # Release Notes
 
+## [v1.2)
+
+### Added
+
+* Documentation improvements
+* Fixed command to generate documentation functions
+* Fixed Apache Benchmark Docker command, now I'm using my own Docker image https://hub.docker.com/r/raffaeldutra/apache-ab
+* `kubectl` alias command
+
+### Removed
+
+* `la` alias command
+* `$LS_GDF` variable at `l` alias command
+
 ## [v1.1)
 
 ### Added
