@@ -21,10 +21,18 @@ clone:
 
 .PHONY: dotfiles
 dotfiles: # Do the installation
-	ln -sf $(current_dir)/.functions ${HOME}/.functions
+	find $(current_dir)/.functions -name "*.sh" | \
+	while read funcs; do
+	    (
+	      cd ${HOME}
+	      ln -sf $$funcs
+	    )
+	done
+	
 	ln -sf $(current_dir)/.vimrc ${HOME}/.vimrc
 	ln -sf $(current_dir)/.bashrc ${HOME}/.bashrc
 	ln -sf $(current_dir)/.bash_aliases ${HOME}/.bash_aliases
+	ln -sf $(current_dir)/.bash_profile ${HOME}/.bash_profile
 	ln -sf $(current_dir)/.dircolors ${HOME}/.dircolors
 	ln -sf $(current_dir)/.gitconfig ${HOME}/.gitconfig
 	ln -sf $(current_dir)/.gitignore ${HOME}/.gitignore

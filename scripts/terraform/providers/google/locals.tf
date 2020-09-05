@@ -1,0 +1,3 @@
+locals {
+  projectName = "my-project"
+}

@@ -162,3 +162,7 @@ _testmain.go
 
 # linux kernel debs
 linux-*.deb
+
+# configs for environments
+.env_*
+.env.sh

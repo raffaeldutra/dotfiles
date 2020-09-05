@@ -10,7 +10,7 @@ The command below will download the Makefile and then run it.
 $ curl -OLs https://raw.githubusercontent.com/raffaeldutra/dotfiles/master/Makefile && make -s clone && make dotfiles
 ```
 
-This will create a `dotfile` directory where you are downloading it and then it will create all the links needed for all files.
+This will create a `dotfiles` directory where you are downloading it and then it will create all the links needed for all files.
 
 At the end, you'll get a structure ~like below:
 
@@ -34,6 +34,7 @@ lrwxrwxrwx  1 rafael rafael   33 2020/02/21 13:28:17 .Xresources -> /home/rafael
 * [Docker](docs/functions/docker.md)
 * [GPG](docs/functions/gpg.md)
 * [Git](docs/functions/git.md)
+* [Vault](docs/functions/vault.md)
 
 ## Generating all functions
 
