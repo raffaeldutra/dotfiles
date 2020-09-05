@@ -12,5 +12,13 @@ docker_make_chapter() {
 docker_ab() {
   [ -z "${1}" ] && { echo "Please enter an URL"; return; }
 
-  docker container run --rm jordi/ab -k -c 100 -n 10000 ${1}
+cat << EOT
+Using the following command:
+docker container run --rm raffaeldutra/apache-ab:latest -k -c 100 -n 10000 ${1}/
+
+WARNING: This function uses the latest version for this image
+Wanna overwrite parameters? You can use the command: docker container run --rm raffaeldutra/apache-ab
+EOT
+
+  docker container run --rm raffaeldutra/apache-ab:latest -k -c 100 -n 10000 ${1}/
 }
