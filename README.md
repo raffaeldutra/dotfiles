@@ -41,7 +41,7 @@ lrwxrwxrwx  1 rafael rafael   33 2020/02/21 13:28:17 .Xresources -> /home/rafael
 This piece below will generate all the functions in your terminal.
 
 ```
-$ cat ${HOME}/.functions/* | \
+$ cat ${HOME}/dotfiles/.functions/* | \
 grep -E '(^# [a-z A-Z]|[()] {)' | \
 sed "s|[{]||g;/^$/d;s/^# /\n/g;s/^[a-z].*/\n\```&\```/;s|() \```|()\```|g"
 ```
